@@ -23,7 +23,7 @@ bpmnVisualization.load(diagram, {
     pools: [
       {
         // name of the Participant related to the Pool to display
-        name: 'Process Engine - Invoice Receipt',
+        // name: 'Process Engine - Invoice Receipt',
       },
     ],
   },
