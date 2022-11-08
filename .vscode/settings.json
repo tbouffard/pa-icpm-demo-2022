@@ -1,0 +1,7 @@
+{
+    "vite.devCommand": "npm start",
+    "vite.port": 5173,
+    "vite.showTerminal": true,
+    "vite.autoStart": false,
+    "browse-lite.chromeExecutable": "/opt/google/chrome/chrome"
+}
