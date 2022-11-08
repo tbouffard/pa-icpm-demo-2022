@@ -4,7 +4,7 @@ import { BpmnVisualization, FitType } from 'bpmn-visualization';
 // for more details, see https://vitejs.dev/guide/assets.html#importing-asset-as-string
 // for other load methods, see https://github.com/process-analytics/bpmn-visualization-examples
 import diagram from './diagram.bpmn?raw';
-import './styles.css';
+// import './styles.css';
 
 // 'bpmn-visualization' API documentation: https://process-analytics.github.io/bpmn-visualization-js/api/index.html
 const bpmnVisualization = new BpmnVisualization({
