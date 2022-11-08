@@ -34,73 +34,73 @@ const activitiesRunningInstances = getActivitiesRunningInstances();
 const edgesWaitingInstances = getEdgesWaitingInstances();
 
 // add Overlays on running activity instances
-activitiesRunningInstances.forEach((value, activityId) => {
-  // running on time
-  if (value.onTime) {
-    bpmnVisualization.bpmnElementsRegistry.addOverlays(activityId, {
-      position: 'top-center',
-      label: `${value.onTime}`,
-      style: {
-        font: { color: 'white', size: 16 },
-        fill: { color: 'green', opacity: 50 },
-        stroke: { color: 'green', width: 2 },
-      },
-    });
-  }
-  // running late with risky level
-  if (value.risky) {
-    bpmnVisualization.bpmnElementsRegistry.addOverlays(activityId, {
-      position: 'top-left',
-      label: `${value.risky}`,
-      style: {
-        font: { color: 'white', size: 16 },
-        fill: { color: '#FF8C00', opacity: 50 },
-        stroke: { color: '#FF8C00', width: 2 },
-      },
-    });
-  }
-  // running late with critical level
-  if (value.critical) {
-    bpmnVisualization.bpmnElementsRegistry.addOverlays(activityId, {
-      position: 'top-right',
-      label: `${value.critical}`,
-      style: {
-        font: { color: 'white', size: 16 },
-        fill: { color: 'red', opacity: 50 },
-        stroke: { color: 'red', width: 2 },
-      },
-    });
-  }
-});
+// activitiesRunningInstances.forEach((value, activityId) => {
+//   // running on time
+//   if (value.onTime) {
+//     bpmnVisualization.bpmnElementsRegistry.addOverlays(activityId, {
+//       position: 'top-center',
+//       label: `${value.onTime}`,
+//       style: {
+//         font: { color: 'white', size: 16 },
+//         fill: { color: 'green', opacity: 50 },
+//         stroke: { color: 'green', width: 2 },
+//       },
+//     });
+//   }
+//   // running late with risky level
+//   if (value.risky) {
+//     bpmnVisualization.bpmnElementsRegistry.addOverlays(activityId, {
+//       position: 'top-left',
+//       label: `${value.risky}`,
+//       style: {
+//         font: { color: 'white', size: 16 },
+//         fill: { color: '#FF8C00', opacity: 50 },
+//         stroke: { color: '#FF8C00', width: 2 },
+//       },
+//     });
+//   }
+//   // running late with critical level
+//   if (value.critical) {
+//     bpmnVisualization.bpmnElementsRegistry.addOverlays(activityId, {
+//       position: 'top-right',
+//       label: `${value.critical}`,
+//       style: {
+//         font: { color: 'white', size: 16 },
+//         fill: { color: 'red', opacity: 50 },
+//         stroke: { color: 'red', width: 2 },
+//       },
+//     });
+//   }
+// });
 
 // add CSS classes to running activity instances
-activitiesRunningInstances.forEach((value, activityId) => {
-  if (value.critical) {
-    bpmnVisualization.bpmnElementsRegistry.addCssClasses(activityId, 'task-running-critical');
-  } else if (value.risky) {
-    bpmnVisualization.bpmnElementsRegistry.addCssClasses(activityId, 'task-running-risky');
-  } else if (value.onTime) {
-    bpmnVisualization.bpmnElementsRegistry.addCssClasses(activityId, 'task-running-on-time');
-  }
-});
+// activitiesRunningInstances.forEach((value, activityId) => {
+//   if (value.critical) {
+//     bpmnVisualization.bpmnElementsRegistry.addCssClasses(activityId, 'task-running-critical');
+//   } else if (value.risky) {
+//     bpmnVisualization.bpmnElementsRegistry.addCssClasses(activityId, 'task-running-risky');
+//   } else if (value.onTime) {
+//     bpmnVisualization.bpmnElementsRegistry.addCssClasses(activityId, 'task-running-on-time');
+//   }
+// });
 
 // add Overlays on waiting edge instances
-edgesWaitingInstances.forEach((value, edgeId) => {
-  bpmnVisualization.bpmnElementsRegistry.addOverlays(edgeId, {
-    position: 'middle',
-    label: `${value}`,
-    style: {
-      font: { color: 'white', size: 16 },
-      fill: { color: 'red', opacity: 50 },
-      stroke: { color: 'red', width: 2 },
-    },
-  });
-});
+// edgesWaitingInstances.forEach((value, edgeId) => {
+//   bpmnVisualization.bpmnElementsRegistry.addOverlays(edgeId, {
+//     position: 'middle',
+//     label: `${value}`,
+//     style: {
+//       font: { color: 'white', size: 16 },
+//       fill: { color: 'red', opacity: 50 },
+//       stroke: { color: 'red', width: 2 },
+//     },
+//   });
+// });
 
 // add CSS classes to waiting edge instances
-edgesWaitingInstances.forEach((value, edgeId) => {
-  bpmnVisualization.bpmnElementsRegistry.addCssClasses(edgeId, 'path-waiting');
-});
+// edgesWaitingInstances.forEach((value, edgeId) => {
+//   bpmnVisualization.bpmnElementsRegistry.addCssClasses(edgeId, 'path-waiting');
+// });
 
 /**
  * @returns {Map<string, Object>} key: BPMN element id / value: running instances
